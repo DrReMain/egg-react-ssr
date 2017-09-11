@@ -4,6 +4,6 @@ import ReactDOM from 'react-dom'
 import App from './views/Index'
 
 ReactDOM.render(
-  <App word="WTF"/>,
+  <App word="world"/>,
   window.document.getElementById('app')
 );

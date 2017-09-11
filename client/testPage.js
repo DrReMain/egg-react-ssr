@@ -4,6 +4,6 @@ import ReactDOM from 'react-dom'
 import App from './views/Test'
 
 ReactDOM.render(
-  <App word="shit"/>,
+  <App word="test"/>,
   window.document.getElementById('app')
 );

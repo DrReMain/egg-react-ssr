@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const assetsPlugin = require('assets-webpack-plugin');
+const extractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -24,12 +25,23 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/,
+        loader: extractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader',
+        }),
+        exclude: /node_modules/,
+      }
     ],
   },
   plugins: [
     new assetsPlugin({
       filename: 'assets.json',
       path: 'app/public',
+    }),
+    new extractTextPlugin({
+      filename: '[name].css'
     }),
   ]
 };

@@ -1,5 +1,11 @@
 'use strict';
-require('babel-core/register');
+require('babel-core/register')({
+  plugins: [
+    ['babel-plugin-transform-require-ignore', {
+      extensions: ['.less', '.css']
+    }],
+  ]
+});
 const React = require('react');
 const { renderToString } = require('react-dom/server');
 
@@ -9,7 +15,7 @@ module.exports = app => {
       const App = require('../../client/views/Index').default;
       const content = renderToString(
         React.createElement(App, {
-          word: 'WTF'
+          word: 'world'
         })
       );
       const staticPath = require('../public/assets.json');
@@ -24,7 +30,7 @@ module.exports = app => {
       const App = require('../../client/views/Test').default;
       const content = renderToString(
         React.createElement(App, {
-          word: 'shit'
+          word: 'test'
         })
       );
       const staticPath = require('../public/assets.json');

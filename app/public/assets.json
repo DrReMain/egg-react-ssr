@@ -1,1 +1,1 @@
-{"test":{"js":"/public/test.js"},"index":{"js":"/public/index.js"}}
+{"test":{"js":"/public/test.js","css":"/public/test.css"},"index":{"js":"/public/index.js","css":"/public/index.css"}}
